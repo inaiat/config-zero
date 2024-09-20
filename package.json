@@ -1,27 +1,23 @@
 {
-  "name": "zeroconfig",
+  "name": "config-zero",
   "version": "1.0.0",
-  "description": "Zeroconfig CLI",
+  "description": "Config-zero CLI",
   "type": "module",
   "engines": {
     "node": ">=20"
   },
   "exports": {
     ".": {
-      "import": "./dist/zero.js",
-      "require": "./dist/zero.cjs"
+      "import": "./dist/zero.js"
     },
     "./zero": {
-      "import": "./dist/zero.js",
-      "require": "./dist/zero.cjs"
+      "import": "./dist/zero.js"
     },
     "./dprint.json": {
-      "import": "./dist/dprint.json",
-      "require": "./dist/dprint.json"
+      "import": "./dist/dprint.json"
     },
     "./eslint.config.mjs": {
-      "import": "./dist/eslint.config.mjs",
-      "require": "./dist/eslint.config.mjs"
+      "import": "./dist/eslint.config.mjs"
     }
   },
   "outDir": "./dist",
@@ -64,8 +60,7 @@
     "bundle": true,
     "target": "node20",
     "format": [
-      "esm",
-      "cjs"
+      "esm"
     ],
     "entry": [
       "src/**/*.ts"

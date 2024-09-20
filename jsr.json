@@ -1,5 +1,12 @@
 {
-  "name": "@inaiat/zeroconfig",
+  "name": "@inaiat/config-zero",
   "version": "0.0.1",
-  "exports": "./src/zero.ts"
+  "exports": "./src/zero.ts",
+  "publish": {
+    "include": [
+      "LICENSE",
+      "README.md",
+      "public/**/*.*"
+    ]
+  }
 }

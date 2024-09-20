@@ -50,8 +50,8 @@ function getPackageName(): string {
     const packageData = JSON.parse(readFileSync(packagePath, 'utf8')) as Record<string, unknown>
     return packageData.name as string
   } catch {
-    console.error('Could not find package.json. Returning default name "zeroconfig"')
-    return 'zeroconfig'
+    console.error('Could not find package.json. Returning default name "config-zero"')
+    return 'config-zero'
   }
 }
 
@@ -79,8 +79,8 @@ const executeScript = (script: string) => {
 const program = new Command()
 
 program
-  .name('zeroconfig')
-  .description('Zeroconfig CLI')
+  .name('config-zero')
+  .description('Zero CLI')
   .version('1.0.0')
 
 program
