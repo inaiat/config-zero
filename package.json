@@ -30,12 +30,11 @@
   },
   "scripts": {
     "build": "tsup --publicDir ./public",
-    "format": "dprint fmt",
-    "lint": "dprint check && eslint",
-    "lint:fix": "dprint fmt && eslint --fix",
+    "fmt": "dprint fmt --config public/dprint.json",
+    "lint": "dprint check --config public/dprint.json && eslint --config public/eslint.config.mjs",
+    "lint:fix": "pnpm fmt && eslint --fix --config public/eslint.config.mjs",
     "prepublishOnly": "pnpm run build",
     "test": "node --import=tsx/esm --test tests/*.ts",
-    "typedoc": "typedoc",
     "prepare": "husky || true"
   },
   "dependencies": {
@@ -46,7 +45,8 @@
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-n": "^17.10.3",
     "eslint-plugin-unicorn": "^55.0.0",
-    "eslint-plugin-unused-imports": "^4.1.4"
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "typescript-eslint": "^8.6.0"
   },
   "devDependencies": {
     "tsup": "^8.3.0",

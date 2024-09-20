@@ -57,7 +57,7 @@ export default tseslint.config(
   n.configs['flat/recommended-module'],
   unicorn.configs['flat/recommended'],
   {
-    ignores: ['*.mjs', 'dist', 'coverage/', 'report/'],
+    ignores: ['*.mjs', 'dist', 'coverage/', 'report/', 'public/'],
   },
   {
     languageOptions,
