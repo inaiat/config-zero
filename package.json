@@ -1,6 +1,6 @@
 {
   "name": "config-zero",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Config-zero CLI",
   "type": "module",
   "engines": {
