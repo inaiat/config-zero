@@ -1,0 +1,75 @@
+{
+  "name": "zeroconfig",
+  "version": "1.0.0",
+  "description": "Zeroconfig CLI",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/zero.js",
+      "require": "./dist/zero.cjs"
+    },
+    "./zero": {
+      "import": "./dist/zero.js",
+      "require": "./dist/zero.cjs"
+    },
+    "./dprint.json": {
+      "import": "./dist/dprint.json",
+      "require": "./dist/dprint.json"
+    },
+    "./eslint.config.mjs": {
+      "import": "./dist/eslint.config.mjs",
+      "require": "./dist/eslint.config.mjs"
+    }
+  },
+  "outDir": "./dist",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/zero.js",
+  "bin": {
+    "zero": "./dist/zero.js"
+  },
+  "scripts": {
+    "build": "tsup --publicDir ./public",
+    "format": "dprint fmt",
+    "lint": "dprint check && eslint",
+    "lint:fix": "dprint fmt && eslint --fix",
+    "prepublishOnly": "pnpm run build",
+    "test": "node --import=tsx/esm --test tests/*.ts",
+    "typedoc": "typedoc",
+    "prepare": "husky || true"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "dprint": "^0.47.2",
+    "eslint": "^9.10.0",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-n": "^17.10.3",
+    "eslint-plugin-unicorn": "^55.0.0",
+    "eslint-plugin-unused-imports": "^4.1.4"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.2",
+    "@types/node": "^22.5.5",
+    "husky": "^9.1.6"
+  },
+  "tsup": {
+    "sourcemap": true,
+    "clean": true,
+    "bundle": true,
+    "target": "node20",
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "entry": [
+      "src/**/*.ts"
+    ]
+  },
+  "packageManager": "pnpm@9.11.0"
+}
