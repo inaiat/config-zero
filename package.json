@@ -34,6 +34,7 @@
     "lint": "dprint check --config public/dprint.json && eslint --config public/eslint.config.mjs",
     "lint:fix": "pnpm fmt && eslint --fix --config public/eslint.config.mjs",
     "prepublishOnly": "pnpm run build",
+    "test": "node --import=tsx/esm --version",
     "prepare": "husky || true"
   },
   "dependencies": {
